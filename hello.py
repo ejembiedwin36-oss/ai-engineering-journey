@@ -6,4 +6,4 @@ print("Hello, AI!")
 print("I am learning AI engineering!")
 
 numbers = np.array([1, 2, 3,])
-print("Dubleed:", numbers * 2)
+print("Doubled:", numbers * 2)
