@@ -1,0 +1,9 @@
+services:
+  practice:
+    build: .
+    volumes:
+      - ai-learning-data:/data
+
+volumes:
+  ai-learning-data:
+    external: true
