@@ -4,6 +4,12 @@ services:
     volumes:
       - ai-learning-data:/data
 
+  web:
+    image: python:3.12-slim
+    command: python -m http.server 8000 --bind 0.0.0.0
+    ports:
+      - "127.0.0.1:8000:8000"
+
 volumes:
   ai-learning-data:
     external: true
