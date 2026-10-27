@@ -5,3 +5,16 @@ __pycache__/
 *.safetensors
 .env
 .venv-practice/
+
+
+# Generated practice data
+/train.csv
+/train.json
+/train.parquet
+
+# Downloaded datasets and models
+/data/
+/models/
+*.bin
+*.onnx
+
