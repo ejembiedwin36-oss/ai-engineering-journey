@@ -12,97 +12,23 @@ def debug_print(name, tensor):
 numbers = torch.tensor([1.0, 2.0, 3.0])
 debug_print("numbers", numbers)
 
-# def traininh_step(model, batch, criterion, optimizer):
-#     inputs, lebels = batch
-#     otuputs = model(input)
-#     loss = criterion(outputs, lebel)
+x = torch.tensor([10.0, 20.0, 30.0])
 
-#     if loss.item() > 100 or torch .isnan(loss):
-#         breakponi()
+breakpoint()
 
-#     loss.backward()
-#     optimizee.step()
-# print()
+print("program continued")
 
 
+import logging
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
 
+)
 
+logger = logging.getLogger(__name__)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+logger.info("training started")
+logger.warning("Loss is increasing")
+logger.error("NaN detected")
