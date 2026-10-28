@@ -17,7 +17,7 @@ exercises, testing, and projects (from README.md).
 
 | Phase | Status | Position |
 | --- | --- | --- |
-| 00 — Setup and Tooling | Do | Lessons 01–09 complete; next: 10 — Terminal & Shell |
+| 00 — Setup and Tooling | Do | Lessons 01–11 complete; next: 12 — Debugging & Profiling |
 
 Later phases have not been assessed or marked complete.
 
@@ -39,9 +39,12 @@ Lesson identifiers are relative to `phases/` in the upstream curriculum.
 
 | 2026-10-27 | 00-setup-and-tooling/09-data-management | 3/3 (100%) | data_practice.py: reproducible 70/15/15 splits, overlap checks, JSON/CSV/Parquet round trips, file-size comparison, Hub caching and streaming; Git ignore verified. Quiz correct on Parquet, streaming, and DVC; concrete examples helped distinguish training/test roles. |
 
+| 2026-10-28 | 00-setup-and-tooling/10-terminal-and-shell | Completed | Practiced shell navigation, pipes and grep, stdout/stderr redirects, background jobs, nohup, tmux detach/reattach, process monitoring, SSH/rsync, aliases, and training-log filtering with awk. |
+| 2026-10-28 | 00-setup-and-tooling/11-linux-for-ai | Completed | Practiced Linux filesystem navigation, file creation, permissions with chmod, disk/cache inspection with df and du, process inspection, tmux persistence, and local scp/rsync transfer behavior. |
+
 ## Next lesson
 
-`00-setup-and-tooling/10-terminal-and-shell` — Terminal & Shell.
+`00-setup-and-tooling/12-debugging-and-profiling` — Debugging & Profiling.
 
 Lesson 08 completed on 2026-10-27; all three post-lesson quiz answers correct
 (3/3, 100%).
