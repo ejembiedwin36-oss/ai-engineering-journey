@@ -41,10 +41,11 @@ Lesson identifiers are relative to `phases/` in the upstream curriculum.
 
 | 2026-10-28 | 00-setup-and-tooling/10-terminal-and-shell | Completed | Practiced shell navigation, pipes and grep, stdout/stderr redirects, background jobs, nohup, tmux detach/reattach, process monitoring, SSH/rsync, aliases, and training-log filtering with awk. |
 | 2026-10-28 | 00-setup-and-tooling/11-linux-for-ai | Completed | Practiced Linux filesystem navigation, file creation, permissions with chmod, disk/cache inspection with df and du, process inspection, tmux persistence, and local scp/rsync transfer behavior. |
+| 2026-10-28 | 00-setup-and-tooling/12-debugging-and-profiling | Completed | Practiced tensor debugging and NaN detection, profiled a PyTorch training loop with cProfile, identified memory allocations with tracemalloc, used TensorBoard to recognize overfitting, inspected tensor shape, device, and gradients with breakpoint and Pdb, and ran the official debugging toolkit. |
 
 ## Next lesson
 
-`00-setup-and-tooling/12-debugging-and-profiling` — Debugging & Profiling.
+`00-setup-and-tooling/13-python-for-ai-engineering` — Python for AI Engineering.
 
 Lesson 08 completed on 2026-10-27; all three post-lesson quiz answers correct
 (3/3, 100%).
