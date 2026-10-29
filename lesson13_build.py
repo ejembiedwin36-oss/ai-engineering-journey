@@ -6,6 +6,7 @@ from pathlib import Path
 import random
 from itertools import islice
 import math
+from collections import Counter
 
 
 
@@ -281,3 +282,89 @@ print([
     ]
     for row in train_rows
 ])
+
+# ============================================================
+# STEP 5: COMPLETE RUN
+# ============================================================
+
+def fit_centroids(labelled_batches):
+    sums = {}
+    counts = Counter()
+
+    for batch in labelled_batches:
+        for row, label in batch:
+            previous = sums.get(
+                label,
+                [0.0] * len(row)
+            )
+
+            sums[label] = [
+                old + value
+                for old, value
+                in zip(previous, row, strict=True)
+            ]
+
+            counts[label] += 1
+
+    return {
+        label: [
+            value / counts[label]
+            for value in sums[label]
+        ]
+        for label in sorted(sums)
+    }
+
+
+def squared_distance(a, b):
+    difference = [
+        x - y
+        for x, y in zip(a, b, strict=True)
+    ]
+
+    return dot(difference, difference)
+
+
+def predict(centroids, row):
+    return min(
+        centroids,
+        key=lambda label: squared_distance(
+            row,
+            centroids[label]
+        ),
+    )
+
+
+def accuracy(centroids, pairs):
+    correct = sum(
+        predict(centroids, row) == label
+        for row, label in pairs
+    )
+
+    return correct / len(pairs)
+
+
+training_data = [
+    ([1.0, 1.0], 0),
+    ([1.2, 0.8], 0),
+    ([4.0, 4.0], 1),
+    ([4.2, 3.8], 1),
+]
+
+centroids = fit_centroids(
+    batches(training_data, 2)
+)
+
+print(centroids)
+print(
+    predict(
+        centroids,
+        [1.1, 1.0]
+    )
+)
+
+print(
+    accuracy(
+        centroids,
+        training_data
+    )
+)
