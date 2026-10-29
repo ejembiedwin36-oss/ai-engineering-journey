@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 import random
 from itertools import islice
+import math
 
 
 
@@ -194,3 +195,40 @@ for epoch in range(2):
     print(
         f"epoch {epoch}: {sizes}"
     )
+
+
+    # ============================================================
+# STEP 4: PURE-PYTHON VECTOR MATH
+# ============================================================
+
+def dot(a, b):
+    return sum(
+        x * y
+        for x, y in zip(a, b, strict=True)
+    )
+
+
+def mean(values):
+    if not values:
+        raise ValueError(
+            "mean() needs at least one value"
+        )
+
+    return sum(values) / len(values)
+
+
+def std(values):
+    mu = mean(values)
+
+    return math.sqrt(
+        sum(
+            (value - mu) ** 2
+            for value in values
+        )
+        / len(values)
+    )
+
+
+print(dot([1.0, 2.0, 3.0], [4.0, 5.0, 6.0]))
+print(mean([2.0, 4.0, 6.0]))
+print(std([2.0, 4.0, 6.0]))
