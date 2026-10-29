@@ -6,7 +6,7 @@ Reconstructed on 2026-10-27 from existing repository files, Git history,
 and the learner's explicit confirmation of completed work. No onboarding or
 placement quiz was run. Historical quiz scores are unknown, not zero.
 
-Latest completed checkpoint: `c80b5ad` — Add Compose web service and networking practice.
+Latest completed checkpoint: `b8e912c` — Complete Lesson 13 speed and memory benchmark.
 
 ## Mission
 
@@ -17,7 +17,7 @@ exercises, testing, and projects (from README.md).
 
 | Phase | Status | Position |
 | --- | --- | --- |
-| 00 — Setup and Tooling | Do | Lessons 01–11 complete; next: 12 — Debugging & Profiling |
+| 00 — Setup and Tooling | Complete | Lessons 01–13 complete |
 
 Later phases have not been assessed or marked complete.
 
@@ -36,16 +36,16 @@ Lesson identifiers are relative to `phases/` in the upstream curriculum.
 | 2026-10-26 | 00-setup-and-tooling/06-python-environments | Not recorded | `b26bace`: pyproject.toml, uv.lock, dependencies and optional extras; uv practice confirmed by learner |
 | 2026-10-26 | 00-setup-and-tooling/07-docker-for-ai | Not recorded | `80dacc6`, `c80b5ad`: Dockerfile, Compose, external named volume, web service, port mapping and networking practice |
 | 2026-10-27 | 00-setup-and-tooling/08-editor-setup | 3/3 (100%) | Completed against official exercises; interpreter, Pylance hover, Black format-on-save, Jupyter installation, and settings confirmed. Correctly explained Remote SSH, notebook output scrolling, and basic type checking in quiz; minor diagnostic issue and kernel check deferred. |
-
 | 2026-10-27 | 00-setup-and-tooling/09-data-management | 3/3 (100%) | data_practice.py: reproducible 70/15/15 splits, overlap checks, JSON/CSV/Parquet round trips, file-size comparison, Hub caching and streaming; Git ignore verified. Quiz correct on Parquet, streaming, and DVC; concrete examples helped distinguish training/test roles. |
-
 | 2026-10-28 | 00-setup-and-tooling/10-terminal-and-shell | Completed | Practiced shell navigation, pipes and grep, stdout/stderr redirects, background jobs, nohup, tmux detach/reattach, process monitoring, SSH/rsync, aliases, and training-log filtering with awk. |
 | 2026-10-28 | 00-setup-and-tooling/11-linux-for-ai | Completed | Practiced Linux filesystem navigation, file creation, permissions with chmod, disk/cache inspection with df and du, process inspection, tmux persistence, and local scp/rsync transfer behavior. |
 | 2026-10-28 | 00-setup-and-tooling/12-debugging-and-profiling | Completed | Practiced tensor debugging and NaN detection, profiled a PyTorch training loop with cProfile, identified memory allocations with tracemalloc, used TensorBoard to recognize overfitting, inspected tensor shape, device, and gradients with breakpoint and Pdb, and ran the official debugging toolkit. |
+| 2026-10-29 | 00-setup-and-tooling/13-python-for-ai-engineering | Completed | `python_ai_practice.py` and `lesson13_build.py`: practiced Python collections, comprehensions, functions, closures, dataclasses, iterators, generators, context managers, exceptions, type hints, JSON/CSV, sorting, counting/grouping tools, seeded splitting, mini-batches, pure-Python dot/mean/std, feature standardization, centroid classification, timing, tracemalloc memory comparison, and NumPy broadcasting. Final benchmark on this machine: index loop 9.69 ms, generator 10.14 ms, map 6.41 ms; list peak 4,000,456 bytes vs generator peak 464 bytes. NumPy broadcasting reproduced the pure-Python standardized values. |
 
 ## Next lesson
 
-`00-setup-and-tooling/13-python-for-ai-engineering` — Python for AI Engineering.
+Phase 00 — Setup and Tooling is complete.
+Next: Phase 01 — Math Foundations.
 
 Lesson 08 completed on 2026-10-27; all three post-lesson quiz answers correct
 (3/3, 100%).
@@ -96,12 +96,20 @@ answers correct: Parquet columnar storage, on-demand streaming, and DVC use.
 Next: Lesson 10. Continue teaching one step at a time and wait for results;
 explain each code chunk's purpose before asking the learner to add it.
 
+Lesson 13 completed on 2026-10-29. Core Build It work is in
+`lesson13_build.py`; broader syntax and idiom practice is in
+`python_ai_practice.py`. The final Use It broadcasting check was run with
+NumPy 2.5.4 in a lightweight local virtual environment after the school
+machine reset. The learner confirmed matching standardized output between the
+pure-Python closure and NumPy broadcasting.
+
 Curriculum order checked against:
 https://github.com/rohitg00/ai-engineering-from-scratch#phase-0
 
 Lesson source:
 https://github.com/rohitg00/ai-engineering-from-scratch/blob/main/phases/00-setup-and-tooling/08-editor-setup/docs/en.md
 https://github.com/rohitg00/ai-engineering-from-scratch/blob/main/phases/00-setup-and-tooling/09-data-management/docs/en.md
+https://github.com/rohitg00/ai-engineering-from-scratch/blob/main/phases/00-setup-and-tooling/13-python-for-ai-engineering/docs/en.md
 
 ## Review queue
 
