@@ -8,6 +8,10 @@ from itertools import islice
 import math
 from collections import Counter
 
+import operator
+import time
+import tracemalloc
+
 
 
 @dataclass(frozen=True)
@@ -367,4 +371,103 @@ print(
         centroids,
         training_data
     )
+)
+
+# ============================================================
+# STEP 6: SPEED AND MEMORY
+# ============================================================
+
+def dot_index_loop(a, b):
+    total = 0.0
+
+    for i in range(len(a)):
+        total += a[i] * b[i]
+
+    return total
+
+
+def dot_map(a, b):
+    return sum(map(operator.mul, a, b))
+
+
+def best_time(fn, *args, repeat=5):
+    times = []
+
+    for _ in range(repeat):
+        start = time.perf_counter()
+        fn(*args)
+        times.append(
+            time.perf_counter() - start
+        )
+
+    return min(times)
+
+
+def peak_bytes(fn):
+    tracemalloc.start()
+
+    try:
+        fn()
+        return tracemalloc.get_traced_memory()[1]
+
+    finally:
+        tracemalloc.stop()
+
+
+def sum_squares_list(n):
+    return sum([
+        i * i
+        for i in range(n)
+    ])
+
+
+def sum_squares_generator(n):
+    return sum(
+        i * i
+        for i in range(n)
+    )
+
+
+rng = random.Random(7)
+
+a = [
+    rng.random()
+    for _ in range(100_000)
+]
+
+b = [
+    rng.random()
+    for _ in range(100_000)
+]
+
+print(
+    "index loop:",
+    round(best_time(dot_index_loop, a, b) * 1000, 2),
+    "ms",
+)
+
+print(
+    "generator:",
+    round(best_time(dot, a, b) * 1000, 2),
+    "ms",
+)
+
+print(
+    "map:",
+    round(best_time(dot_map, a, b) * 1000, 2),
+    "ms",
+)
+
+print(
+    "list peak:",
+    peak_bytes(
+        lambda: sum_squares_list(100_000)
+    ),
+)
+
+print(
+    "generator peak:",
+    peak_bytes(
+        lambda: sum_squares_generator(100_000)
+    ),
 )
