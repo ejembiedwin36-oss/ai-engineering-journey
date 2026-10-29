@@ -232,3 +232,52 @@ def std(values):
 print(dot([1.0, 2.0, 3.0], [4.0, 5.0, 6.0]))
 print(mean([2.0, 4.0, 6.0]))
 print(std([2.0, 4.0, 6.0]))
+
+
+# ============================================================
+# STEP 5: STANDARDIZE FEATURES
+# ============================================================
+
+def make_standardizer(rows):
+    columns = list(zip(*rows))
+
+    means = [
+        mean(column)
+        for column in columns
+    ]
+
+    stds = [
+        std(column)
+        for column in columns
+    ]
+
+    scales = [
+        s if s > 0 else 1.0
+        for s in stds
+    ]
+
+    def standardize(row):
+        return [
+            (value - mu) / scale
+            for value, mu, scale
+            in zip(row, means, scales, strict=True)
+        ]
+
+    return standardize
+
+
+train_rows = [
+    (1.0, 100.0),
+    (2.0, 300.0),
+    (3.0, 500.0),
+]
+
+standardize = make_standardizer(train_rows)
+
+print([
+    [
+        round(value, 3)
+        for value in standardize(row)
+    ]
+    for row in train_rows
+])
