@@ -16,6 +16,27 @@ if __name__ == "__main__":
 
 
 
+def vector_add(a, b):
+    return [a[0] + b[0], a[1] + b[1]]
+
+
+def main():
+    print(vector_add([2, 4], [3, 1]))
+    print(vector_add([3, -2], [-1, 5]))
+
+if __name__ == "__main__":
+ 
+    main()
+
+def vector_subtract(a, b):
+    return [a[0] - b[0], a[1] - b[1]]
+
+def main():
+    print(vector_subtract([5, 4], [2, 1]))
+    print(vector_subtract([3, -2], [-1, 5]))
+
+if __name__ == "__main__":
+    main()
 
 
 
