@@ -221,8 +221,71 @@ I need more practice with:
 
 The updated code was successfully pushed to GitHub.
 
+### Matrix Addition and Shape Validation
+
+**Exercise file:**
+
+`02-vectors-matrices-operations/matrix_addition.py`
+
+### What I Worked On
+
+I implemented matrix addition using nested lists and nested `for` loops.
+
+I also added shape validation so the program checks whether two matrices have the same number of rows and columns before performing addition.
+
+### What I Understood
+
+- Matrix addition adds corresponding elements from two matrices.
+- Both matrices must have the same shape before they can be added.
+- The outer loop visits each row.
+- The inner loop visits each column.
+- `new_row.append(addition)` adds a calculated sum to the current row.
+- `result.append(new_row)` adds a completed row to the result matrix.
+- `len(matrix)` counts rows.
+- `len(matrix[0])` counts columns in the first row.
+- `!=` means not equal.
+- `or` means that if either condition is true, the overall condition is true.
+- `if` checks whether the shapes are different.
+- `else` allows the addition to proceed when the shapes match.
+
+### The Five Learning Stages
+
+1. **Understand the concept before writing code:** I learned that matrices can only be added when they have the same shape.
+2. **Break the problem into smaller pieces:** I planned to check rows, check columns, and then add corresponding elements.
+3. **Work through pseudocode:** I planned to display an error when the shapes differ and perform addition otherwise.
+4. **Attempt the implementation myself:** I wrote the nested loops and added the shape-checking condition.
+5. **Test my understanding and implementation:** I tested matching shapes, different rows, and different columns.
+
+### What I Tested
+
+| Test | Expected result | Status |
+|---|---|---|
+| Two 2 × 2 matrices | `[[6, 8], [10, 12]]` | Passed |
+| Different row counts | Display shape error | Passed |
+| Different column counts | Display shape error | Passed |
+
+These were manual program checks, not an automated test suite.
+
+### What I Learned
+
+I learned that checking input dimensions before performing an operation helps prevent invalid calculations.
+
+I also practised reading Python conditions and understanding how indentation determines which instructions belong inside `if` and `else`.
+
+### What I Need to Improve
+
+I need more practice with:
+
+- Writing nested loops independently.
+- Understanding list indexing.
+- Checking matrix dimensions.
+- Explaining conditional logic in my own words.
+- Writing automated tests.
+
+
+
 ### Next Action
 
-Continue Phase 01, Lesson 02 by learning the next matrix operation.
+Continue Phase 01, Lesson 02 by studying the next matrix operation.
 
-I will continue using the five-stage learning process and practise implementing solutions myself before receiving complete answers.
+I have completed matrix shape calculation and matrix addition with shape validation. I will continue using the five-stage learning process and practise implementing solutions myself before receiving complete answers.
