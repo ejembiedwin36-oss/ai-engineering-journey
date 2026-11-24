@@ -8,7 +8,7 @@ My goal is not just to complete lessons. I want to understand the mathematics, e
 
 ---
 
-## Lesson 01 — Vectors
+# Lesson 01 — Vectors
 
 **Date:** 2026-11-19
 
@@ -122,15 +122,107 @@ I still need more practice with:
 
 The code was pushed to GitHub, and the working tree was clean after the push.
 
+---
+
+# Lesson 02 — Vectors, Matrices & Operations
+
+**Date:** 2026-11-24
+
+**Status:** In Progress
+
+### What I Worked On
+
+I started learning about matrices and how to calculate their shape using Python.
+
+My exercise is in:
+
+`02-vectors-matrices-operations/matrix_shape.py`
+
+### What I Understood
+
+- A matrix is a rectangular arrangement of numbers organized into rows and columns.
+- Rows run horizontally.
+- Columns run vertically.
+- Matrix shape is written as rows × columns.
+- `len(matrix)` counts the rows.
+- `len(matrix[0])` counts the columns in the first row.
+- Total elements = rows × columns.
+- Python lists use zero-based indexing, so `matrix[0]` accesses the first row.
+
+### What I Practised in Python
+
+I practised:
+
+- Creating nested lists.
+- Storing values in variables.
+- Using `len()` to count rows and columns.
+- Accessing a list inside another list.
+- Multiplying values.
+- Displaying results with `print()`.
+
+### The Five Learning Stages
+
+I completed the five stages for my first matrix-shape exercise:
+
+1. **Understand the concept before writing code:** I learned what matrices, rows, columns, and dimensions mean.
+2. **Break the problem into smaller pieces:** I identified how to create the matrix, count rows, count columns, calculate total elements, and display results.
+3. **Work through pseudocode:** I planned the steps before implementation.
+4. **Attempt the implementation myself:** I wrote and improved the Python program.
+5. **Test my understanding and implementation:** I tested different matrices and explained their dimensions.
+
+### What I Tested
+
+| Matrix shape | Expected total | Result |
+|---|---:|---|
+| 3 × 2 | 6 | Passed |
+| 2 × 4 | 8 | Passed |
+| 4 × 3 | 12 | Passed |
+
+These were manual program checks, not an automated test suite.
+
+### Challenge and How I Fixed It
+
+I initially used fixed row and column values.
+
+I learned that hardcoded values do not automatically change when the matrix changes.
+
+I corrected this by calculating the dimensions directly from the matrix:
+
+- `row = len(matrix)`
+- `column = len(matrix[0])`
+
+This made the program dynamic.
+
+### What I Learned
+
+I learned that a good program should calculate values from its actual input instead of relying on numbers that I manually enter into the code.
+
+I also learned why breaking a problem into smaller steps makes implementation easier.
+
+### What I Did Well
+
+I completed my first matrix-shape exercise, tested three different matrix sizes, corrected my hardcoded dimensions, and pushed the updated code to GitHub.
+
+### What I Need to Improve
+
+I need more practice with:
+
+- Creating nested lists independently.
+- Explaining matrix dimensions without looking at notes.
+- Understanding matrix operations.
+- Writing automated tests.
+- Solving exercises with less guidance.
+
+### Git Record
+
+**Commit:** `e4ff469`
+
+**Commit message:** `feat: calculate matrix dimensions dynamically`
+
+The updated code was successfully pushed to GitHub.
+
 ### Next Action
 
-Continue with the next Phase 01 lesson.
+Continue Phase 01, Lesson 02 by learning the next matrix operation.
 
-I will keep using the same learning process:
-
-1. Understand the concept.
-2. Explain it in my own words.
-3. Work through pseudocode.
-4. Implement it in Python.
-5. Test my implementation.
-6. Record what I learned and what I need to improve.
+I will continue using the five-stage learning process and practise implementing solutions myself before receiving complete answers.
